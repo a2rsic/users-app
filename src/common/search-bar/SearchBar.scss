@@ -1,0 +1,25 @@
+$bg-color-gray: #ccc;
+$bg-color-light: #ddd;
+
+input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container {
+  button {
+    padding: 1px 10px 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: $bg-color-light;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: $bg-color-gray;
+    }
+  }
+}
