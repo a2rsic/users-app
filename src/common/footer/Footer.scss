@@ -1,0 +1,15 @@
+$bg-color-dark: #1565c0;
+$text-color-white: white;
+
+.footer {
+  width: 99%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: $bg-color-dark;
+
+  p {
+    color: $text-color-white;
+    text-align: center;
+  }
+}
