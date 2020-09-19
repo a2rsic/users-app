@@ -4,11 +4,14 @@ import UserCard from "./UserCard";
 
 const UsersList = () => {
   return (
-    <div>
-      <UserCard />
-      <UserCard />
-      <UserCard />
-    </div>
+    // Add width 25%
+    <>
+      <div style={{ margin: 30 }}>
+        <UserCard />
+        <UserCard />
+        <UserCard />
+      </div>
+    </>
   );
 };
 
