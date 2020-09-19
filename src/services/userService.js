@@ -1,7 +1,10 @@
+import { api } from "../config/API";
+
 class UserService {
-  fetchUsers() {
-    const path = "";
-    // const response = await
+  async fetchUsers() {
+    const path = "users";
+    const response = await api.get(path);
+    return response;
   }
 }
 

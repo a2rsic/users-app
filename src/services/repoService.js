@@ -1,7 +1,10 @@
+import { api } from "../config/API";
+
 class RepoService {
-  fetchRepos(userId) {
-    const path = "";
-    // const response = await
+  async fetchRepos(userName) {
+    const path = `${userName}/repos`;
+    const response = await await api.get(path);
+    return response;
   }
 }
 
