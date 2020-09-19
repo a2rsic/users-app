@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./UserCard.scss";
 
-const UserCard = () => {
+const UserCard = ({ user }) => {
   return (
     <Link to="/repos" style={{ textDecoration: "none", color: "gray" }}>
       <div className="user-card-container">
