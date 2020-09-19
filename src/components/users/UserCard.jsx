@@ -5,7 +5,10 @@ import "./UserCard.scss";
 
 const UserCard = ({ user }) => {
   return (
-    <Link to="/repos" style={{ textDecoration: "none", color: "gray" }}>
+    <Link
+      to={`${user.name}/repos`}
+      style={{ textDecoration: "none", color: "gray" }}
+    >
       <div className="user-card-container">
         <div className="img">
           <img
