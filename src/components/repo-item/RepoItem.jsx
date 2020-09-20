@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import { repoService } from "../../services/repoService";
 
+import Loader from "../../common/loader/Loader";
+
 import "./RepoItem.scss";
 
 const RepoItem = () => {
@@ -19,6 +21,10 @@ const RepoItem = () => {
   useEffect(() => {
     loadRepo();
   }, []);
+
+  if (!repo) {
+    return <Loader />;
+  }
 
   return (
     <>
