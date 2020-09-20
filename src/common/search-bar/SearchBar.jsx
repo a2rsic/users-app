@@ -6,13 +6,18 @@ import { useSearchContext } from "../../SearchContext";
 import "./SearchBar.scss";
 
 const SearchBar = () => {
-  const { searchInput, setSearchInput } = useSearchContext();
+  let { searchInput, setSearchInput } = useSearchContext();
 
   const onChangeHandler = (e) => {
     e.preventDefault();
     const searchInput = e.target.value;
     if (!searchInput) return;
 
+    setSearchInput(searchInput);
+  };
+
+  const resetInputValue = () => {
+    searchInput = "";
     setSearchInput(searchInput);
   };
 
@@ -26,6 +31,7 @@ const SearchBar = () => {
         value={searchInput}
         autoComplete="off"
       />
+      <button onClick={resetInputValue}>x</button>
     </div>
   );
 };

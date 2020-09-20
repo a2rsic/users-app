@@ -36,8 +36,10 @@ const UsersList = () => {
     if (searchInput) {
       const timer = setTimeout(() => {
         filterUsers(searchInput);
-      }, 2000);
+      }, 1500);
       return () => clearTimeout(timer);
+    } else {
+      loadUsers();
     }
   }, [searchInput]);
 
