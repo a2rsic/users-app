@@ -4,20 +4,19 @@ import { Link } from "react-router-dom";
 import "./UserCard.scss";
 
 const UserCard = ({ user }) => {
+  const { login, avatar_url } = user;
+
   return (
     <Link
-      to={`${user.name}/repos`}
+      to={`${login}/repos`}
       style={{ textDecoration: "none", color: "gray" }}
     >
       <div className="user-card-container">
         <div className="img">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSDbudoVtVUAZQ1msOQOfK1iCZEXStfwpTyrw&usqp=CAU"
-            alt="Avatar"
-          />
+          <img src={avatar_url} alt="Avatar" />
         </div>
         <div className="user-info">
-          <h3>User Name</h3>
+          <h3>{login}</h3>
           <p>User public description...</p>
         </div>
       </div>

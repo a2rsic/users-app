@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 
 import { repoService } from "../../services/repoService";
 
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-
 import RepoCard from "./RepoCard";
 import Loader from "../../common/loader/Loader";
 
@@ -19,7 +17,6 @@ const ReposList = () => {
   const loadRepos = async () => {
     try {
       const repos = await repoService.fetchRepos(username);
-      console.log("repos", repos);
       setRepos(repos);
     } catch (error) {
       setError(error);
@@ -34,19 +31,18 @@ const ReposList = () => {
     return repos.map((repo, index) => <RepoCard key={index} repo={repo} />);
   };
 
-  if (!repos) {
+  if (!repos.length) {
     return <Loader />;
   }
 
   return (
     <>
-      {error && <Loader />}
-      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-        <ArrowBackIcon
-          fontSize="large"
-          style={{ cursor: "pointer", padding: 20 }}
-        />
-      </Link>
+      {error && <p>{error}</p>}
+      <div style={{ margin: 40 }}>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+          <button className="button-secondary pure-button">Back</button>
+        </Link>
+      </div>
       <div
         style={{
           display: "flex",
@@ -55,8 +51,7 @@ const ReposList = () => {
           margin: 30,
         }}
       >
-        <RepoCard />
-        {/* {mapRepos()} */}
+        {mapRepos()}
       </div>
     </>
   );
