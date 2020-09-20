@@ -26,9 +26,11 @@ const RepoItem = () => {
         <div className="container">
           <h2>{repo.name}</h2>
           <ul>
-            <li>
-              <i>Licence type:</i>&nbsp; {repo.license.name}
-            </li>
+            {repo.license && (
+              <li>
+                <i>Licence type:</i>&nbsp; {repo.license.name}
+              </li>
+            )}
             <li>
               <i>Stargazers count:</i>&nbsp; {repo.stargazers_count}
             </li>
